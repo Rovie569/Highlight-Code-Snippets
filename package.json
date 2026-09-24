@@ -5,6 +5,7 @@
   "version": "0.3.1",
   "icon": "icon.png",
   "publisher": "Traveler",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Rovie569/Highlight-Code-Snippets.git"
@@ -60,27 +61,40 @@
         "when": "editorTextFocus"
       }
     ],
+    "submenus": [
+      {
+        "id": "highlightMenu",
+        "label": "Highlight"
+      }
+    ],
     "menus": {
       "editor/context": [
         {
+          "submenu": "highlightMenu",
+          "group": "navigation",
+          "when": "editorTextFocus"
+        }
+      ],
+      "highlightMenu": [
+        {
           "command": "highlight-code-snippet.highlight",
           "when": "editorHasSelection",
-          "group": "navigation"
+          "group": "1_actions@1"
         },
         {
           "command": "highlight-code-snippet.pickColor",
           "when": "editorTextFocus",
-          "group": "navigation"
+          "group": "1_actions@2"
         },
         {
           "command": "highlight-code-snippet.clearSpecific",
           "when": "editorTextFocus",
-          "group": "navigation"
+          "group": "2_clear@1"
         },
         {
           "command": "highlight-code-snippet.clear",
           "when": "editorTextFocus",
-          "group": "navigation"
+          "group": "2_clear@2"
         }
       ]
     },
@@ -102,9 +116,11 @@
     "lint": "eslint src"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.1",
     "@types/vscode": "^1.60.0",
     "@types/node": "22.x",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0",
     "eslint": "^9.39.1"
   }
 }
