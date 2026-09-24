@@ -2,7 +2,7 @@
   "name": "highlight-code-snippet",
   "displayName": "Highlight Code Snippet",
   "description": "Highlight selected code snippets with a color and adjustable transparency",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "icon": "icon.png",
   "publisher": "Traveler",
   "license": "MIT",
